@@ -14,9 +14,12 @@
       --font-page: "Manrope";
       --font-art-nouveau: "Cormorant Garamond";
       --font-futurisme: "Teko";
-      --font-destijl: "Poppins";
-      --font-bauhaus: "Josefin Sans";
+      --font-art-deco: "Bifur", "Peignot LT Std", "Broadway", "Oswald";
+      --font-annees-folles: "Broadway", "Gill Sans", "Futura", "Teko";
+      --font-destijl: "Van Doesburg", "De Stijl", "Futura", "Poppins";
+      --font-bauhaus: "Universal", "Futura", "Kabel", "Oswald";
       --font-constructivisme: "Oswald";
+      --font-ecole-polonaise: "Antykwa Poltawskiego", "Półtawski Nowy", "Gill Sans", "Poppins";
       --line-spin-duration: 1200ms;
       --appear-offset-before-line-end: 200ms;
       --title-appear-delay: calc(var(--line-spin-duration) - var(--appear-offset-before-line-end));
@@ -27,6 +30,8 @@
     body {
       margin: 0;
       font-family: var(--font-page), "Segoe UI", sans-serif;
+      --cursor-x: -120px;
+      --cursor-y: -120px;
       color: var(--text);
       background:
         radial-gradient(1200px 600px at 20% -20%, #1f3b5b 0%, transparent 60%),
@@ -36,6 +41,47 @@
       overflow-x: hidden;
       transition: background 700ms ease;
       animation: pageZoomIn 10200ms cubic-bezier(.16,.84,.32,1) both;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      left: var(--cursor-x);
+      top: var(--cursor-y);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 180ms ease;
+    }
+
+    body::before {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 159, 67, 0.36) 0%, rgba(255, 159, 67, 0.14) 42%, rgba(255, 159, 67, 0) 70%);
+      filter: blur(5px);
+    }
+
+    body::after {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: #ff9f43;
+      box-shadow: 0 0 14px rgba(255, 159, 67, 0.95), 0 0 30px rgba(255, 159, 67, 0.6);
+    }
+
+    body.has-cursor-glow::before,
+    body.has-cursor-glow::after {
+      opacity: 1;
+    }
+
+    @media (pointer: fine) {
+      body,
+      body * {
+        cursor: none !important;
+      }
     }
 
     body.theme-art-nouveau {
@@ -57,6 +103,27 @@
       background:
         linear-gradient(130deg, #1d1d1d 0%, #2b0d0d 30%, #6f1111 70%, #1d1d1d 100%),
         #131313;
+    }
+
+    body.theme-art-deco {
+      --glow-main: rgba(240, 190, 99, 0.78);
+      --glow-soft: rgba(240, 190, 99, 0.52);
+      --glow-dot: rgba(115, 184, 195, 0.82);
+      --glow-dot-ring: rgba(115, 184, 195, 0.24);
+      background:
+        linear-gradient(145deg, #161414 0%, #2b2118 36%, #6c5432 74%, #171513 100%),
+        #141311;
+    }
+
+    body.theme-annees-folles {
+      --glow-main: rgba(239, 142, 92, 0.78);
+      --glow-soft: rgba(239, 142, 92, 0.5);
+      --glow-dot: rgba(255, 214, 120, 0.84);
+      --glow-dot-ring: rgba(255, 214, 120, 0.26);
+      background:
+        radial-gradient(860px 460px at 18% 18%, rgba(176, 66, 34, 0.56) 0%, transparent 62%),
+        radial-gradient(760px 420px at 84% 74%, rgba(32, 26, 48, 0.52) 0%, transparent 58%),
+        #18141f;
     }
 
     body.theme-destijl {
@@ -90,6 +157,17 @@
       background:
         linear-gradient(155deg, #120f0f 0%, #1b1414 40%, #4f0d0d 78%, #120f0f 100%),
         #0f0d0d;
+    }
+
+    body.theme-ecole-polonaise {
+      --glow-main: rgba(219, 72, 58, 0.8);
+      --glow-soft: rgba(219, 72, 58, 0.5);
+      --glow-dot: rgba(255, 189, 90, 0.86);
+      --glow-dot-ring: rgba(255, 189, 90, 0.28);
+      background:
+        radial-gradient(840px 460px at 14% 18%, rgba(106, 24, 24, 0.58) 0%, transparent 60%),
+        radial-gradient(720px 420px at 82% 74%, rgba(33, 45, 66, 0.52) 0%, transparent 58%),
+        #121318;
     }
 
     .hero {
@@ -141,6 +219,7 @@
       --movement-color: var(--line);
       --movement-border: rgba(255, 255, 255, 0.14);
       --section-font: var(--font-interface);
+      --section-scale: 1;
       position: relative;
       width: 50%;
       padding: 24px 32px;
@@ -148,11 +227,14 @@
       transform: translateY(28px) scale(0.97);
     }
 
-    .event[data-theme="art-nouveau"] { --movement-color: #9ed08a; --movement-border: rgba(158, 208, 138, 0.42); --section-font: var(--font-art-nouveau); }
-    .event[data-theme="futurisme"] { --movement-color: #f54848; --movement-border: rgba(245, 72, 72, 0.42); --section-font: var(--font-futurisme); }
-    .event[data-theme="destijl"] { --movement-color: #f2c230; --movement-border: rgba(242, 194, 48, 0.42); --section-font: var(--font-destijl); }
-    .event[data-theme="bauhaus"] { --movement-color: #3d99c2; --movement-border: rgba(61, 153, 194, 0.42); --section-font: var(--font-bauhaus); }
-    .event[data-theme="constructivisme"] { --movement-color: #e83838; --movement-border: rgba(232, 56, 56, 0.44); --section-font: var(--font-constructivisme); }
+    .event[data-theme="art-nouveau"] { --movement-color: #9ed08a; --movement-border: rgba(158, 208, 138, 0.42); --section-font: var(--font-art-nouveau); --section-scale: 1.05; }
+    .event[data-theme="futurisme"] { --movement-color: #f54848; --movement-border: rgba(245, 72, 72, 0.42); --section-font: var(--font-futurisme); --section-scale: 0.92; }
+    .event[data-theme="art-deco"] { --movement-color: #f0be63; --movement-border: rgba(240, 190, 99, 0.42); --section-font: var(--font-art-deco); --section-scale: 1; }
+    .event[data-theme="annees-folles"] { --movement-color: #ef8e5c; --movement-border: rgba(239, 142, 92, 0.42); --section-font: var(--font-annees-folles); --section-scale: 1; }
+    .event[data-theme="destijl"] { --movement-color: #f2c230; --movement-border: rgba(242, 194, 48, 0.42); --section-font: var(--font-destijl); --section-scale: 0.98; }
+    .event[data-theme="bauhaus"] { --movement-color: #3d99c2; --movement-border: rgba(61, 153, 194, 0.42); --section-font: var(--font-bauhaus); --section-scale: 1; }
+    .event[data-theme="constructivisme"] { --movement-color: #e83838; --movement-border: rgba(232, 56, 56, 0.44); --section-font: var(--font-constructivisme); --section-scale: 0.97; }
+    .event[data-theme="ecole-polonaise"] { --movement-color: #db483a; --movement-border: rgba(219, 72, 58, 0.44); --section-font: var(--font-ecole-polonaise); --section-scale: 1; }
 
     .timeline.cascade .event {
       animation: sectionCascadeIn 1300ms ease-in-out both;
@@ -224,14 +306,14 @@
 
     .year {
       margin: 0 0 6px;
-      font-size: 1.1rem;
+      font-size: calc(1.1rem * var(--section-scale));
       color: var(--movement-color);
       font-weight: 700;
     }
 
     .title {
       margin: 0 0 8px;
-      font-size: 1.35rem;
+      font-size: calc(1.35rem * var(--section-scale));
       font-weight: 700;
       font-family: var(--section-font), "Segoe UI", sans-serif;
     }
@@ -304,6 +386,7 @@
     .desc {
       margin: 0;
       color: var(--muted);
+      font-size: calc(1rem * var(--section-scale));
       line-height: 1.55;
     }
 
@@ -311,11 +394,24 @@
       margin: 12px 0 0;
       padding-left: 18px;
       color: var(--muted);
+      font-size: calc(0.95rem * var(--section-scale));
       line-height: 1.5;
     }
 
     .details li {
       margin: 4px 0;
+    }
+
+    .figure-name {
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 180ms ease, text-shadow 180ms ease;
+    }
+
+    .figure-name:hover {
+      color: var(--movement-color);
+      text-shadow: 0 0 12px var(--glow-soft);
     }
 
     .media-pair {
@@ -409,6 +505,88 @@
       color: #dce9f5;
       font-size: 0.9rem;
       text-align: center;
+    }
+
+    .person-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 12, 18, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+      z-index: 10000;
+    }
+
+    .person-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .person-sheet {
+      width: min(620px, 94vw);
+      border-radius: 16px;
+      border: 1px solid var(--movement-border, rgba(255, 255, 255, 0.2));
+      background: linear-gradient(140deg, rgba(22, 31, 43, 0.92), rgba(16, 23, 33, 0.94));
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.45);
+      padding: 20px 20px 18px;
+      position: relative;
+      display: grid;
+      gap: 10px;
+    }
+
+    .person-close {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .person-label {
+      margin: 0;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--movement-color, var(--accent));
+    }
+
+    .person-name {
+      margin: 0;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+    }
+
+    .person-meta,
+    .person-bio,
+    .person-work {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .person-link {
+      justify-self: start;
+      margin-top: 6px;
+      color: var(--text);
+      border: 1px solid var(--movement-border, rgba(255, 255, 255, 0.2));
+      border-radius: 999px;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .person-link:hover {
+      transform: translateY(-1px);
+      border-color: var(--glow-main);
     }
 
     .side-window {
@@ -538,6 +716,13 @@
       100% {
         opacity: 1;
         transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (pointer: coarse) {
+      body::before,
+      body::after {
+        display: none;
       }
     }
 

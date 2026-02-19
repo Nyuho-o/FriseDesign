@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1300" role="img" aria-labelledby="t d">
+  <title id="t">Affiche style Ecole polonaise - Cinema</title>
+  <desc id="d">Affiche expressive inspiree de l'ecole polonaise d'affiche.</desc>
+  <rect width="900" height="1300" fill="#111317"/>
+  <g opacity="0.9">
+    <circle cx="300" cy="420" r="180" fill="#d94837"/>
+    <circle cx="560" cy="560" r="220" fill="#f0b34e"/>
+    <circle cx="430" cy="790" r="170" fill="#2b4d7a"/>
+  </g>
+  <path d="M140 1060 C260 920, 650 920, 760 1060" fill="none" stroke="#f1e6d0" stroke-width="14"/>
+  <text x="450" y="1080" fill="#f1e6d0" font-family="Arial Black, sans-serif" font-size="84" text-anchor="middle" letter-spacing="6">CINEMA</text>
+  <text x="450" y="1160" fill="#d94837" font-family="Arial Black, sans-serif" font-size="44" text-anchor="middle" letter-spacing="5">ECOLE POLONAISE</text>
+</svg>
