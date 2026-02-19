@@ -19,6 +19,8 @@
       --font-destijl: "Van Doesburg", "De Stijl", "Futura", "Poppins";
       --font-bauhaus: "Universal", "Futura", "Kabel", "Oswald";
       --font-constructivisme: "Oswald";
+      --font-style-suisse: "Helvetica Neue", "Univers", "Akzidenz-Grotesk", "Arial";
+      --font-constructivisme-suisse: "Univers", "Helvetica Neue", "Akzidenz-Grotesk", "Arial";
       --font-ecole-polonaise: "Antykwa Poltawskiego", "Półtawski Nowy", "Gill Sans", "Poppins";
       --line-spin-duration: 1200ms;
       --appear-offset-before-line-end: 200ms;
@@ -159,6 +161,28 @@
         #0f0d0d;
     }
 
+    body.theme-style-suisse {
+      --text: #e8edf3;
+      --muted: #aebbc8;
+      --glow-main: rgba(224, 71, 57, 0.78);
+      --glow-soft: rgba(224, 71, 57, 0.5);
+      --glow-dot: rgba(252, 246, 232, 0.82);
+      --glow-dot-ring: rgba(252, 246, 232, 0.22);
+      background:
+        linear-gradient(165deg, #0f1115 0%, #171c22 42%, #272d35 100%),
+        #0f1115;
+    }
+
+    body.theme-constructivisme-suisse {
+      --glow-main: rgba(230, 76, 56, 0.78);
+      --glow-soft: rgba(230, 76, 56, 0.52);
+      --glow-dot: rgba(237, 236, 232, 0.84);
+      --glow-dot-ring: rgba(237, 236, 232, 0.24);
+      background:
+        linear-gradient(152deg, #111418 0%, #1c232b 44%, #2f3a46 100%),
+        #111418;
+    }
+
     body.theme-ecole-polonaise {
       --glow-main: rgba(219, 72, 58, 0.8);
       --glow-soft: rgba(219, 72, 58, 0.5);
@@ -234,6 +258,8 @@
     .event[data-theme="destijl"] { --movement-color: #f2c230; --movement-border: rgba(242, 194, 48, 0.42); --section-font: var(--font-destijl); --section-scale: 0.98; }
     .event[data-theme="bauhaus"] { --movement-color: #3d99c2; --movement-border: rgba(61, 153, 194, 0.42); --section-font: var(--font-bauhaus); --section-scale: 1; }
     .event[data-theme="constructivisme"] { --movement-color: #e83838; --movement-border: rgba(232, 56, 56, 0.44); --section-font: var(--font-constructivisme); --section-scale: 0.97; }
+    .event[data-theme="style-suisse"] { --movement-color: #e04739; --movement-border: rgba(224, 71, 57, 0.42); --section-font: var(--font-style-suisse); --section-scale: 1; }
+    .event[data-theme="constructivisme-suisse"] { --movement-color: #e64c38; --movement-border: rgba(230, 76, 56, 0.44); --section-font: var(--font-constructivisme-suisse); --section-scale: 1; }
     .event[data-theme="ecole-polonaise"] { --movement-color: #db483a; --movement-border: rgba(219, 72, 58, 0.44); --section-font: var(--font-ecole-polonaise); --section-scale: 1; }
 
     .timeline.cascade .event {
@@ -316,6 +342,15 @@
       font-size: calc(1.35rem * var(--section-scale));
       font-weight: 700;
       font-family: var(--section-font), "Segoe UI", sans-serif;
+    }
+
+    .title-font-note {
+      font-size: 0.5em;
+      font-weight: 500;
+      opacity: 0.78;
+      margin-left: 6px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
     .card-toggle {

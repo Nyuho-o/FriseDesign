@@ -38,6 +38,8 @@
       "theme-destijl",
       "theme-bauhaus",
       "theme-constructivisme",
+      "theme-style-suisse",
+      "theme-constructivisme-suisse",
       "theme-ecole-polonaise"
     ];
 
@@ -129,6 +131,10 @@
       "joost-schmidt": { name: "Joost Schmidt", years: "1893-1948", movement: "Bauhaus", bio: "Graphiste allemand, auteur d'affiches emblematiques de l'ecole du Bauhaus.", keyWork: "Affiche Bauhaus Ausstellung (1923).", link: "https://fr.wikipedia.org/wiki/Joost_Schmidt" },
       "alexander-rodchenko": { name: "Alexander Rodchenko", years: "1891-1956", movement: "Constructivisme russe", bio: "Artiste et designer sovietique, figure cle du photomontage et de l'affiche politique.", keyWork: "Affiche Books! (1924).", link: "https://fr.wikipedia.org/wiki/Alexandre_Rodtchenko" },
       "gustav-klutsis": { name: "Gustav Klutsis", years: "1895-1938", movement: "Constructivisme russe", bio: "Artiste letton de l'avant-garde sovietique, connu pour ses montages propagandistes.", keyWork: "Series d'affiches politiques photomontees (annees 1930).", link: "https://en.wikipedia.org/wiki/Gustav_Klutsis" },
+      "josef-muller-brockmann": { name: "Josef Muller-Brockmann", years: "1914-1996", movement: "Style suisse", bio: "Graphiste suisse majeur du style typographique international, connu pour ses grilles rigoureuses et ses affiches de concerts.", keyWork: "Series d'affiches de la Tonhalle de Zurich (annees 1950-1960).", link: "https://fr.wikipedia.org/wiki/Josef_M%C3%BCller-Brockmann" },
+      "armin-hofmann": { name: "Armin Hofmann", years: "1920-2020", movement: "Style suisse", bio: "Designer et pedagogue suisse, cofondateur d'une approche moderniste basee sur le contraste, la typographie et la composition claire.", keyWork: "Affiches de la Schule fur Gestaltung Basel et enseignement du graphisme moderne.", link: "https://en.wikipedia.org/wiki/Armin_Hofmann" },
+      "max-bill": { name: "Max Bill", years: "1908-1994", movement: "Constructivisme suisse", bio: "Artiste, architecte et designer suisse lie a l'art concret, promoteur d'une pensee visuelle rationnelle et systemique.", keyWork: "Affiches et systemes graphiques pour expositions d'art concret.", link: "https://fr.wikipedia.org/wiki/Max_Bill" },
+      "richard-paul-lohse": { name: "Richard Paul Lohse", years: "1902-1988", movement: "Constructivisme suisse", bio: "Artiste et graphiste suisse de l'art concret, connu pour ses structures modulaires et ses compositions serielles.", keyWork: "Compositions systematiques et travaux graphiques modulaires (annees 1940-1970).", link: "https://en.wikipedia.org/wiki/Richard_Paul_Lohse" },
       "henryk-tomaszewski": { name: "Henryk Tomaszewski", years: "1914-2005", movement: "Ecole polonaise d'affiche", bio: "Graphiste polonais majeur, precurseur de l'affiche culturelle expressive d'apres-guerre.", keyWork: "Affiches de theatre et de cinema polonaises (annees 1950-1970).", link: "https://fr.wikipedia.org/wiki/Henryk_Tomaszewski_(graphiste)" },
       "jan-lenica": { name: "Jan Lenica", years: "1928-2001", movement: "Ecole polonaise d'affiche", bio: "Affichiste et illustrateur polonais, reconnu pour son style metaphorique et surrealisant.", keyWork: "Affiches de cinema et de theatre, travail graphique international.", link: "https://fr.wikipedia.org/wiki/Jan_Lenica" }
     };

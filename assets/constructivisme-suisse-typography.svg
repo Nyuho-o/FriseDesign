@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Typographie constructivisme suisse</title>
+  <desc id="desc">Affiche typographique minimaliste influencée par la rigueur suisse et les formes constructives.</desc>
+  <rect width="1200" height="800" fill="#151a20"/>
+  <rect x="110" y="100" width="980" height="600" fill="none" stroke="#3a4654" stroke-width="2"/>
+  <rect x="110" y="100" width="120" height="600" fill="#e64c38"/>
+  <rect x="230" y="100" width="120" height="600" fill="#ece8df"/>
+  <text x="410" y="220" font-family="Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="#ece8df">FORM</text>
+  <text x="410" y="310" font-family="Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="#e64c38">UND</text>
+  <text x="410" y="400" font-family="Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="#ece8df">SYSTEM</text>
+  <text x="410" y="500" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#c5ccd5">Zurich, 1958</text>
+  <text x="410" y="560" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#aeb8c4">Max Bill · Richard Paul Lohse</text>
+</svg>

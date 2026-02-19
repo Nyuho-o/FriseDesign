@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Composition constructivisme suisse</title>
+  <desc id="desc">Affiche geometrique inspiree du constructivisme et de la grille suisse.</desc>
+  <rect width="1200" height="800" fill="#111418"/>
+  <g stroke="#2d3642" stroke-width="1">
+    <path d="M100 80V720M220 80V720M340 80V720M460 80V720M580 80V720M700 80V720M820 80V720M940 80V720M1060 80V720"/>
+    <path d="M100 80H1100M100 200H1100M100 320H1100M100 440H1100M100 560H1100M100 680H1100"/>
+  </g>
+  <polygon points="100,80 580,80 100,560" fill="#e64c38"/>
+  <rect x="700" y="200" width="320" height="90" fill="#ece8df"/>
+  <rect x="700" y="320" width="220" height="90" fill="#e64c38"/>
+  <text x="710" y="258" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="700" fill="#111">KONSTRUKT</text>
+  <text x="710" y="380" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="700" fill="#111">BASEL</text>
+  <text x="700" y="520" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#e5e8ec">structure • grille • contraste</text>
+</svg>
