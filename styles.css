@@ -21,6 +21,7 @@
       --font-constructivisme: "Oswald";
       --font-style-suisse: "Helvetica Neue", "Univers", "Akzidenz-Grotesk", "Arial";
       --font-constructivisme-suisse: "Univers", "Helvetica Neue", "Akzidenz-Grotesk", "Arial";
+      --font-psychedelique: "Blippo", "Cooper Black", "Bauhaus 93", "Arial Black";
       --font-ecole-polonaise: "Antykwa Poltawskiego", "Półtawski Nowy", "Gill Sans", "Poppins";
       --line-spin-duration: 1200ms;
       --appear-offset-before-line-end: 200ms;
@@ -79,10 +80,20 @@
       opacity: 1;
     }
 
+    body.cursor-suspended::before,
+    body.cursor-suspended::after {
+      opacity: 0 !important;
+    }
+
     @media (pointer: fine) {
       body,
       body * {
         cursor: none !important;
+      }
+
+      body.cursor-suspended,
+      body.cursor-suspended * {
+        cursor: auto !important;
       }
     }
 
@@ -183,6 +194,18 @@
         #111418;
     }
 
+    body.theme-psychedelique {
+      --glow-main: rgba(255, 92, 175, 0.82);
+      --glow-soft: rgba(255, 92, 175, 0.56);
+      --glow-dot: rgba(95, 235, 222, 0.86);
+      --glow-dot-ring: rgba(95, 235, 222, 0.26);
+      background:
+        radial-gradient(780px 460px at 16% 18%, rgba(131, 44, 175, 0.58) 0%, transparent 62%),
+        radial-gradient(760px 440px at 84% 74%, rgba(24, 118, 160, 0.52) 0%, transparent 58%),
+        linear-gradient(155deg, #151228 0%, #21173a 48%, #102437 100%),
+        #121426;
+    }
+
     body.theme-ecole-polonaise {
       --glow-main: rgba(219, 72, 58, 0.8);
       --glow-soft: rgba(219, 72, 58, 0.5);
@@ -260,6 +283,7 @@
     .event[data-theme="constructivisme"] { --movement-color: #e83838; --movement-border: rgba(232, 56, 56, 0.44); --section-font: var(--font-constructivisme); --section-scale: 0.97; }
     .event[data-theme="style-suisse"] { --movement-color: #e04739; --movement-border: rgba(224, 71, 57, 0.42); --section-font: var(--font-style-suisse); --section-scale: 1; }
     .event[data-theme="constructivisme-suisse"] { --movement-color: #e64c38; --movement-border: rgba(230, 76, 56, 0.44); --section-font: var(--font-constructivisme-suisse); --section-scale: 1; }
+    .event[data-theme="psychedelique"] { --movement-color: #ff5caf; --movement-border: rgba(255, 92, 175, 0.44); --section-font: var(--font-psychedelique); --section-scale: 1; }
     .event[data-theme="ecole-polonaise"] { --movement-color: #db483a; --movement-border: rgba(219, 72, 58, 0.44); --section-font: var(--font-ecole-polonaise); --section-scale: 1; }
 
     .timeline.cascade .event {
@@ -641,6 +665,38 @@
       animation: heroIn 800ms ease-out var(--title-appear-delay) both;
     }
 
+    .definition-window {
+      position: fixed;
+      right: clamp(12px, 2.2vw, 34px);
+      top: calc(50% - 198px);
+      transform: translateY(-100%);
+      width: min(320px, 27vw);
+      z-index: 1199;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 12px 14px;
+      display: grid;
+      gap: 6px;
+      animation: heroIn 800ms ease-out var(--title-appear-delay) both;
+      text-align: center;
+    }
+
+    .definition-title {
+      margin: 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      color: var(--text);
+    }
+
+    .definition-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
     .side-window-title {
       margin: 0;
       font-size: 0.98rem;
@@ -660,6 +716,7 @@
       padding: 10px 11px;
       background: rgba(255, 255, 255, 0.05);
       color: var(--text);
+      font-family: inherit;
       text-decoration: none;
       font-size: 0.88rem;
       text-align: center;
@@ -784,6 +841,15 @@
     }
 
     @media (max-width: 1220px) {
+      .definition-window {
+        position: fixed;
+        right: clamp(10px, 2.2vw, 20px);
+        top: calc(50% - 188px);
+        transform: translateY(-100%);
+        width: min(300px, calc(100vw - 20px));
+        margin: 0;
+      }
+
       .side-window {
         position: fixed;
         right: clamp(10px, 2.2vw, 20px);

@@ -40,6 +40,7 @@
       "theme-constructivisme",
       "theme-style-suisse",
       "theme-constructivisme-suisse",
+      "theme-psychedelique",
       "theme-ecole-polonaise"
     ];
 
@@ -135,6 +136,8 @@
       "armin-hofmann": { name: "Armin Hofmann", years: "1920-2020", movement: "Style suisse", bio: "Designer et pedagogue suisse, cofondateur d'une approche moderniste basee sur le contraste, la typographie et la composition claire.", keyWork: "Affiches de la Schule fur Gestaltung Basel et enseignement du graphisme moderne.", link: "https://en.wikipedia.org/wiki/Armin_Hofmann" },
       "max-bill": { name: "Max Bill", years: "1908-1994", movement: "Constructivisme suisse", bio: "Artiste, architecte et designer suisse lie a l'art concret, promoteur d'une pensee visuelle rationnelle et systemique.", keyWork: "Affiches et systemes graphiques pour expositions d'art concret.", link: "https://fr.wikipedia.org/wiki/Max_Bill" },
       "richard-paul-lohse": { name: "Richard Paul Lohse", years: "1902-1988", movement: "Constructivisme suisse", bio: "Artiste et graphiste suisse de l'art concret, connu pour ses structures modulaires et ses compositions serielles.", keyWork: "Compositions systematiques et travaux graphiques modulaires (annees 1940-1970).", link: "https://en.wikipedia.org/wiki/Richard_Paul_Lohse" },
+      "wes-wilson": { name: "Wes Wilson", years: "1937-2020", movement: "Psychadelique", bio: "Affichiste americain pionnier du lettrage psychadelique, celebre pour ses affiches de concerts a San Francisco.", keyWork: "Affiches du Fillmore Auditorium (annees 1960).", link: "https://en.wikipedia.org/wiki/Wes_Wilson" },
+      "victor-moscoso": { name: "Victor Moscoso", years: "1936-", movement: "Psychadelique", bio: "Graphiste et artiste associe aux affiches psychadeliques, reconnu pour ses contrastes chromatiques vibrants et compositions optiques.", keyWork: "Affiches pour l'Avalon Ballroom (1966-1968).", link: "https://en.wikipedia.org/wiki/Victor_Moscoso" },
       "henryk-tomaszewski": { name: "Henryk Tomaszewski", years: "1914-2005", movement: "Ecole polonaise d'affiche", bio: "Graphiste polonais majeur, precurseur de l'affiche culturelle expressive d'apres-guerre.", keyWork: "Affiches de theatre et de cinema polonaises (annees 1950-1970).", link: "https://fr.wikipedia.org/wiki/Henryk_Tomaszewski_(graphiste)" },
       "jan-lenica": { name: "Jan Lenica", years: "1928-2001", movement: "Ecole polonaise d'affiche", bio: "Affichiste et illustrateur polonais, reconnu pour son style metaphorique et surrealisant.", keyWork: "Affiches de cinema et de theatre, travail graphique international.", link: "https://fr.wikipedia.org/wiki/Jan_Lenica" }
     };
@@ -157,6 +160,7 @@
       if (personBio) personBio.textContent = "";
       if (personWork) personWork.textContent = "";
       if (personLink) personLink.href = "#";
+      syncCursorSuspension();
     };
 
     const openPersonModal = (personKey) => {
@@ -169,6 +173,7 @@
       personLink.href = person.link;
       personModal.classList.add("open");
       personModal.setAttribute("aria-hidden", "false");
+      syncCursorSuspension();
     };
 
     figureNames.forEach((figure) => {
@@ -204,6 +209,17 @@
     const copyOpenSectionButton = document.getElementById("copy-open-section-button");
     const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
 
+    const syncCursorSuspension = () => {
+      const shouldSuspend = Boolean(
+        (personModal && personModal.classList.contains("open")) ||
+        (lightbox && lightbox.classList.contains("open"))
+      );
+      document.body.classList.toggle("cursor-suspended", shouldSuspend);
+      if (shouldSuspend) {
+        document.body.classList.remove("has-cursor-glow");
+      }
+    };
+
     const hideCursorGlow = () => {
       document.body.classList.remove("has-cursor-glow");
     };
@@ -230,6 +246,7 @@
       lightboxImage.src = "";
       lightboxImage.alt = "";
       lightboxCaption.textContent = "";
+      syncCursorSuspension();
     };
 
     mediaLinks.forEach((link) => {
@@ -243,6 +260,7 @@
         lightboxCaption.textContent = caption ? caption.textContent : "";
         lightbox.classList.add("open");
         lightbox.setAttribute("aria-hidden", "false");
+        syncCursorSuspension();
       });
     });
 
