@@ -302,6 +302,51 @@
       animation: lineSpinIn var(--line-spin-duration) ease-out both, linePulse 2.6s ease-in-out var(--line-spin-duration) infinite;
     }
 
+    .timeline-indicator {
+      position: fixed;
+      left: -100px;
+      top: -100px;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      z-index: 1300;
+      pointer-events: none;
+      background:
+        radial-gradient(circle, rgba(255, 214, 120, 1) 0%, rgba(255, 159, 67, 0.96) 46%, rgba(255, 80, 80, 0.92) 100%);
+      box-shadow:
+        0 0 0 6px rgba(255, 159, 67, 0.16),
+        0 0 18px rgba(255, 159, 67, 0.86),
+        0 0 34px rgba(255, 80, 80, 0.46);
+      transition: left 120ms linear, top 120ms linear, box-shadow 220ms ease, background 220ms ease, opacity 180ms ease;
+      opacity: 0;
+    }
+
+    .timeline-indicator.is-visible {
+      opacity: 1;
+    }
+
+    .timeline-indicator::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: inherit;
+      background: rgba(255, 244, 214, 0.96);
+    }
+
+    .timeline-indicator::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255, 214, 120, 0.22);
+      box-shadow: 0 0 24px rgba(255, 159, 67, 0.22);
+    }
+
     .event {
       --movement-color: var(--line);
       --movement-border: rgba(255, 255, 255, 0.14);

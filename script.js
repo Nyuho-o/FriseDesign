@@ -2,6 +2,7 @@
     const timeline = document.querySelector(".timeline");
     const mainTitle = document.querySelector(".hero h1");
     const timelineDate = document.getElementById("timeline-date");
+    const timelineIndicator = document.getElementById("timeline-indicator");
 
     const toMs = (timeValue) => {
       if (!timeValue) return 0;
@@ -43,6 +44,18 @@
         timelineYearStart + (timelineYearEnd - timelineYearStart) * scrollProgress
       );
       timelineDate.textContent = String(currentYear || timelineYearStart);
+
+      if (timeline && timelineIndicator) {
+        const timelineRect = timeline.getBoundingClientRect();
+        const isTimelineVisible = timelineRect.bottom > 0 && timelineRect.top < window.innerHeight;
+        const clampedProgress = Math.min(Math.max(scrollProgress, 0), 1);
+        const isMobile = window.innerWidth <= 860;
+        const indicatorLeft = isMobile ? timelineRect.left + 16 : timelineRect.left + (timelineRect.width / 2);
+        const indicatorTop = timelineRect.top + (timelineRect.height * clampedProgress);
+        timelineIndicator.style.left = `${indicatorLeft}px`;
+        timelineIndicator.style.top = `${indicatorTop}px`;
+        timelineIndicator.classList.toggle("is-visible", isTimelineVisible);
+      }
     };
 
     updateTimelineDate();
