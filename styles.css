@@ -14,15 +14,18 @@
       --font-page: "Manrope";
       --font-art-nouveau: "Cormorant Garamond";
       --font-futurisme: "Teko";
-      --font-art-deco: "Bifur", "Peignot LT Std", "Broadway", "Oswald";
-      --font-annees-folles: "Broadway", "Gill Sans", "Futura", "Teko";
-      --font-destijl: "Van Doesburg", "De Stijl", "Futura", "Poppins";
-      --font-bauhaus: "Universal", "Futura", "Kabel", "Oswald";
+      --font-art-deco: "Cinzel Decorative";
+      --font-annees-folles: "Limelight";
+      --font-destijl: "Archivo Black";
+      --font-bauhaus: "League Spartan";
       --font-constructivisme: "Oswald";
-      --font-style-suisse: "Helvetica Neue", "Univers", "Akzidenz-Grotesk", "Arial";
-      --font-constructivisme-suisse: "Univers", "Helvetica Neue", "Akzidenz-Grotesk", "Arial";
-      --font-psychedelique: "Blippo", "Cooper Black", "Bauhaus 93", "Arial Black";
-      --font-ecole-polonaise: "Antykwa Poltawskiego", "Półtawski Nowy", "Gill Sans", "Poppins";
+      --font-style-suisse: "Archivo";
+      --font-constructivisme-suisse: "IBM Plex Sans";
+      --font-psychedelique: "Shrikhand";
+      --font-mai-68: "Oswald";
+      --font-gag-visuel: "Archivo Black";
+      --font-ecole-polonaise: "Literata";
+      --font-postmodernisme: "Monoton";
       --line-spin-duration: 1200ms;
       --appear-offset-before-line-end: 200ms;
       --title-appear-delay: calc(var(--line-spin-duration) - var(--appear-offset-before-line-end));
@@ -217,6 +220,42 @@
         #121318;
     }
 
+    body.theme-mai-68 {
+      --glow-main: rgba(187, 71, 59, 0.8);
+      --glow-soft: rgba(187, 71, 59, 0.52);
+      --glow-dot: rgba(242, 210, 122, 0.84);
+      --glow-dot-ring: rgba(242, 210, 122, 0.26);
+      background:
+        radial-gradient(880px 480px at 18% 14%, rgba(124, 28, 25, 0.6) 0%, transparent 60%),
+        radial-gradient(760px 420px at 82% 78%, rgba(92, 68, 31, 0.52) 0%, transparent 56%),
+        linear-gradient(150deg, #181111 0%, #2a1715 48%, #1a1511 100%),
+        #120f0f;
+    }
+
+    body.theme-gag-visuel {
+      --glow-main: rgba(94, 226, 88, 0.82);
+      --glow-soft: rgba(94, 226, 88, 0.54);
+      --glow-dot: rgba(255, 216, 84, 0.88);
+      --glow-dot-ring: rgba(255, 216, 84, 0.28);
+      background:
+        radial-gradient(760px 420px at 16% 18%, rgba(69, 153, 36, 0.58) 0%, transparent 60%),
+        radial-gradient(720px 420px at 84% 76%, rgba(246, 146, 36, 0.52) 0%, transparent 58%),
+        linear-gradient(148deg, #141b12 0%, #182414 44%, #1c2312 100%),
+        #12170f;
+    }
+
+    body.theme-postmodernisme {
+      --glow-main: rgba(75, 224, 196, 0.82);
+      --glow-soft: rgba(255, 111, 214, 0.54);
+      --glow-dot: rgba(255, 210, 68, 0.88);
+      --glow-dot-ring: rgba(255, 210, 68, 0.28);
+      background:
+        radial-gradient(900px 500px at 14% 14%, rgba(255, 93, 168, 0.58) 0%, transparent 58%),
+        radial-gradient(760px 420px at 84% 72%, rgba(62, 208, 189, 0.52) 0%, transparent 56%),
+        linear-gradient(150deg, #191126 0%, #2d1733 42%, #132c36 100%),
+        #14111f;
+    }
+
     .hero {
       padding: 96px 24px 36px;
       text-align: center;
@@ -246,6 +285,7 @@
       margin: 30px auto 80px;
       padding: 20px 0;
       z-index: 1;
+      overflow-anchor: none;
     }
 
     .timeline::before {
@@ -275,16 +315,19 @@
     }
 
     .event[data-theme="art-nouveau"] { --movement-color: #9ed08a; --movement-border: rgba(158, 208, 138, 0.42); --section-font: var(--font-art-nouveau); --section-scale: 1.05; }
-    .event[data-theme="futurisme"] { --movement-color: #f54848; --movement-border: rgba(245, 72, 72, 0.42); --section-font: var(--font-futurisme); --section-scale: 0.92; }
-    .event[data-theme="art-deco"] { --movement-color: #f0be63; --movement-border: rgba(240, 190, 99, 0.42); --section-font: var(--font-art-deco); --section-scale: 1; }
-    .event[data-theme="annees-folles"] { --movement-color: #ef8e5c; --movement-border: rgba(239, 142, 92, 0.42); --section-font: var(--font-annees-folles); --section-scale: 1; }
-    .event[data-theme="destijl"] { --movement-color: #f2c230; --movement-border: rgba(242, 194, 48, 0.42); --section-font: var(--font-destijl); --section-scale: 0.98; }
-    .event[data-theme="bauhaus"] { --movement-color: #3d99c2; --movement-border: rgba(61, 153, 194, 0.42); --section-font: var(--font-bauhaus); --section-scale: 1; }
+    .event[data-theme="futurisme"] { --movement-color: #f54848; --movement-border: rgba(245, 72, 72, 0.42); --section-font: "Josefin Sans"; --section-scale: 0.92; }
+    .event[data-theme="art-deco"] { --movement-color: #f0be63; --movement-border: rgba(240, 190, 99, 0.42); --section-font: "Manrope"; --section-scale: 1; }
+    .event[data-theme="annees-folles"] { --movement-color: #ef8e5c; --movement-border: rgba(239, 142, 92, 0.42); --section-font: "Josefin Sans"; --section-scale: 1; }
+    .event[data-theme="destijl"] { --movement-color: #f2c230; --movement-border: rgba(242, 194, 48, 0.42); --section-font: "Poppins"; --section-scale: 0.98; }
+    .event[data-theme="bauhaus"] { --movement-color: #3d99c2; --movement-border: rgba(61, 153, 194, 0.42); --section-font: "Josefin Sans"; --section-scale: 1; }
     .event[data-theme="constructivisme"] { --movement-color: #e83838; --movement-border: rgba(232, 56, 56, 0.44); --section-font: var(--font-constructivisme); --section-scale: 0.97; }
     .event[data-theme="style-suisse"] { --movement-color: #e04739; --movement-border: rgba(224, 71, 57, 0.42); --section-font: var(--font-style-suisse); --section-scale: 1; }
     .event[data-theme="constructivisme-suisse"] { --movement-color: #e64c38; --movement-border: rgba(230, 76, 56, 0.44); --section-font: var(--font-constructivisme-suisse); --section-scale: 1; }
-    .event[data-theme="psychedelique"] { --movement-color: #ff5caf; --movement-border: rgba(255, 92, 175, 0.44); --section-font: var(--font-psychedelique); --section-scale: 1; }
+    .event[data-theme="psychedelique"] { --movement-color: #ff5caf; --movement-border: rgba(255, 92, 175, 0.44); --section-font: "Josefin Sans"; --section-scale: 1; }
+    .event[data-theme="mai-68"] { --movement-color: #bb473b; --movement-border: rgba(187, 71, 59, 0.44); --section-font: var(--font-mai-68); --section-scale: 1.02; }
+    .event[data-theme="gag-visuel"] { --movement-color: #5ee258; --movement-border: rgba(94, 226, 88, 0.44); --section-font: var(--font-gag-visuel); --section-scale: 0.98; }
     .event[data-theme="ecole-polonaise"] { --movement-color: #db483a; --movement-border: rgba(219, 72, 58, 0.44); --section-font: var(--font-ecole-polonaise); --section-scale: 1; }
+    .event[data-theme="postmodernisme"] { --movement-color: #52e4c7; --movement-border: rgba(82, 228, 199, 0.42); --section-font: "Poppins"; --section-scale: 1; }
 
     .timeline.cascade .event {
       animation: sectionCascadeIn 1300ms ease-in-out both;
@@ -368,9 +411,103 @@
       font-family: var(--section-font), "Segoe UI", sans-serif;
     }
 
+    .event[data-theme="art-nouveau"] .title {
+      font-family: var(--font-art-nouveau), "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .event[data-theme="futurisme"] .title {
+      font-family: var(--font-futurisme), "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="art-deco"] .title {
+      font-family: var(--font-art-deco), "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .event[data-theme="annees-folles"] .title {
+      font-family: var(--font-annees-folles), "Segoe UI", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    .event[data-theme="destijl"] .title {
+      font-family: var(--font-destijl), "Segoe UI", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="bauhaus"] .title {
+      font-family: var(--font-bauhaus), "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="constructivisme"] .title {
+      font-family: var(--font-constructivisme), "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="style-suisse"] .title {
+      font-family: var(--font-style-suisse), "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="constructivisme-suisse"] .title {
+      font-family: var(--font-constructivisme-suisse), "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="psychedelique"] .title {
+      font-family: var(--font-psychedelique), "Segoe UI", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .event[data-theme="mai-68"] .title {
+      font-family: var(--font-mai-68), "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="gag-visuel"] .title {
+      font-family: var(--font-gag-visuel), "Segoe UI", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .event[data-theme="ecole-polonaise"] .title {
+      font-family: var(--font-ecole-polonaise), "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.015em;
+    }
+
+    .event[data-theme="postmodernisme"] .title {
+      font-family: var(--font-postmodernisme), "Segoe UI", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
     .title-font-note {
       font-size: 0.5em;
       font-weight: 500;
+      font-family: var(--font-interface), "Segoe UI", sans-serif;
+      text-transform: none;
       opacity: 0.78;
       margin-left: 6px;
       letter-spacing: 0.02em;
@@ -428,6 +565,7 @@
       max-height: 0;
       opacity: 0;
       overflow: hidden;
+      overflow-anchor: none;
       transform: translateY(-6px);
       transition: max-height 500ms ease, opacity 360ms ease, transform 360ms ease, margin-top 360ms ease;
       margin-top: 0;
@@ -683,6 +821,42 @@
       text-align: center;
     }
 
+    .date-window {
+      position: fixed;
+      right: clamp(12px, 2.2vw, 34px);
+      top: calc(50% - 316px);
+      transform: translateY(-100%);
+      width: min(320px, 27vw);
+      z-index: 1199;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 10px 14px;
+      display: grid;
+      gap: 2px;
+      text-align: center;
+      animation: heroIn 800ms ease-out var(--title-appear-delay) both;
+    }
+
+    .date-window-label {
+      margin: 0;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .date-window-value {
+      margin: 0;
+      color: var(--movement-color, var(--accent));
+      font-family: var(--font-interface), "Segoe UI", sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-shadow: 0 0 18px var(--glow-soft);
+    }
+
     .definition-title {
       margin: 0;
       font-size: 0.9rem;
@@ -841,6 +1015,15 @@
     }
 
     @media (max-width: 1220px) {
+      .date-window {
+        position: fixed;
+        right: clamp(10px, 2.2vw, 20px);
+        top: calc(50% - 306px);
+        transform: translateY(-100%);
+        width: min(300px, calc(100vw - 20px));
+        margin: 0;
+      }
+
       .definition-window {
         position: fixed;
         right: clamp(10px, 2.2vw, 20px);

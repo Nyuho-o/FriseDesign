@@ -7,7 +7,7 @@
   <title>Frise Chronologique Motion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Josefin+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Josefin+Sans:wght@400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&family=Limelight&family=Literata:wght@400;500;600;700&family=Manrope:wght@400;500;700&family=Monoton&family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Shrikhand&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -15,6 +15,11 @@
     <h1>Frise Chronologique</h1>
     <p>Une frise dédiée aux grandes étapes de l'histoire du design</p>
   </header>
+
+  <aside class="date-window" aria-label="Repere temporel">
+    <p class="date-window-label">Repere temporel</p>
+    <p class="date-window-value" id="timeline-date">1890</p>
+  </aside>
 
   <aside class="definition-window" aria-label="Definition du graphisme">
     <h2 class="definition-title">Definition du graphisme</h2>
@@ -103,74 +108,6 @@
       </div>
     </article>
 
-    <article class="event" data-theme="art-deco" data-wiki="https://fr.wikipedia.org/wiki/Art_d%C3%A9co">
-      <span class="dot"></span>
-      <div class="card">
-        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-art-deco">
-          <h2 class="title">Art déco <span class="title-font-note">(Bifur)</span></h2>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="card-content" id="content-art-deco">
-          <p class="year">1919 - 1939</p>
-          <p class="desc">L'Art déco impose une esthétique elegante et geometrique, entre luxe moderne, symetrie et stylisation.</p>
-          <ul class="details">
-            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="am-cassandre" title="Clique pour ouvrir sa fiche">A. M. Cassandre</span>, <span class="figure-name" data-person="jean-carlu" title="Clique pour ouvrir sa fiche">Jean Carlu</span>.</li>
-            <li><strong>Typographies :</strong><br>Acier Noir, Acier Gris, Bifur.</li>
-            <li><strong>Affiches / créations majeures :</strong><br>Normandie - Cassandre (1935), affiches Dubo Dubon Dubonnet - Cassandre (1932).</li>
-            <li><strong>Caractéristiques graphiques :</strong><br>formes geometriques, contrastes forts, lignes verticales, stylisation des volumes.</li>
-          </ul>
-          <div class="media-pair">
-            <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Poster_Cassandre_van_de_%C3%89toile_du_Nord_in_een_van_de_werkkamers%2C_Bestanddeelnr_189-0330.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Poster_Cassandre_van_de_%C3%89toile_du_Nord_in_een_van_de_werkkamers%2C_Bestanddeelnr_189-0330.jpg" alt="Affiche de Cassandre, Etoile du Nord">
-                <span class="media-caption">Cassandre - Etoile du Nord</span>
-              </a>
-            </div>
-            <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Opening_decor_en_affiche-tentoonstelling_van_A._M._Cassandre_in_de_Rijksacademie%2C_Bestanddeelnr_920-3489.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Opening_decor_en_affiche-tentoonstelling_van_A._M._Cassandre_in_de_Rijksacademie%2C_Bestanddeelnr_920-3489.jpg" alt="Exposition d'affiches de A. M. Cassandre">
-                <span class="media-caption">Affiches de A. M. Cassandre</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="event" data-theme="annees-folles" data-wiki="https://fr.wikipedia.org/wiki/Ann%C3%A9es_folles">
-      <span class="dot"></span>
-      <div class="card">
-        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-annees-folles">
-          <h2 class="title">Les années folles <span class="title-font-note">(Broadway)</span></h2>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="card-content" id="content-annees-folles">
-          <p class="year">1920 - 1929</p>
-          <p class="desc">Periode d'effervescence artistique et culturelle, marquee par le jazz, la modernite urbaine et l'elegance graphique.</p>
-          <ul class="details">
-            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="paul-colin" title="Clique pour ouvrir sa fiche">Paul Colin</span>, <span class="figure-name" data-person="charles-loupot" title="Clique pour ouvrir sa fiche">Charles Loupot</span>.</li>
-            <li><strong>Typographies :</strong><br>usage de lettrages geometriques, affiches stylisees et influences Art déco.</li>
-            <li><strong>Affiches / créations majeures :</strong><br>Revue Negre - Paul Colin (1925), affiches de spectacles parisiens des annees 1920.</li>
-            <li><strong>Caractéristiques graphiques :</strong><br>lignes elegantes, rythmes dynamiques, motifs repetitifs, contraste noir-or-couleurs vives.</li>
-          </ul>
-          <div class="media-pair">
-            <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Josephine_Baker_-_Paul_Colin_(39055570664).jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Josephine_Baker_-_Paul_Colin_%2839055570664%29.jpg" alt="Josephine Baker peinte par Paul Colin">
-                <span class="media-caption">Josephine Baker - Paul Colin</span>
-              </a>
-            </div>
-            <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9phine_Baker_-_photo_Wal%C3%A9ry.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9phine_Baker_-_photo_Wal%C3%A9ry.jpg" alt="Portrait de Josephine Baker, photo Walery">
-                <span class="media-caption">Josephine Baker - photo Walery</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
     <article class="event" data-theme="destijl" data-wiki="https://fr.wikipedia.org/wiki/De_Stijl">
       <span class="dot"></span>
       <div class="card">
@@ -198,6 +135,40 @@
               <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Gerrit_rietveld,_red_and_blue_chair,_1918_(1925).jpg" target="_blank" rel="noopener noreferrer">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Gerrit_rietveld%2C_red_and_blue_chair%2C_1918_%281925%29.jpg" alt="Red and Blue Chair de Gerrit Rietveld">
                 <span class="media-caption">Rietveld - Red and Blue Chair</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event" data-theme="art-deco" data-wiki="https://fr.wikipedia.org/wiki/Art_d%C3%A9co">
+      <span class="dot"></span>
+      <div class="card">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-art-deco">
+          <h2 class="title">Art déco <span class="title-font-note">(Bifur)</span></h2>
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="card-content" id="content-art-deco">
+          <p class="year">1919 - 1939</p>
+          <p class="desc">L'Art déco impose une esthétique elegante et geometrique, entre luxe moderne, symetrie et stylisation.</p>
+          <ul class="details">
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="am-cassandre" title="Clique pour ouvrir sa fiche">A. M. Cassandre</span>, <span class="figure-name" data-person="jean-carlu" title="Clique pour ouvrir sa fiche">Jean Carlu</span>.</li>
+            <li><strong>Typographies :</strong><br>Acier Noir, Acier Gris, Bifur.</li>
+            <li><strong>Affiches / créations majeures :</strong><br>Normandie - Cassandre (1935), affiches Dubo Dubon Dubonnet - Cassandre (1932).</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>formes geometriques, contrastes forts, lignes verticales, stylisation des volumes.</li>
+          </ul>
+          <div class="media-pair">
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Poster_Cassandre_van_de_%C3%89toile_du_Nord_in_een_van_de_werkkamers%2C_Bestanddeelnr_189-0330.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Poster_Cassandre_van_de_%C3%89toile_du_Nord_in_een_van_de_werkkamers%2C_Bestanddeelnr_189-0330.jpg" alt="Affiche de Cassandre, Etoile du Nord">
+                <span class="media-caption">Cassandre - Etoile du Nord</span>
+              </a>
+            </div>
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Opening_decor_en_affiche-tentoonstelling_van_A._M._Cassandre_in_de_Rijksacademie%2C_Bestanddeelnr_920-3489.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Opening_decor_en_affiche-tentoonstelling_van_A._M._Cassandre_in_de_Rijksacademie%2C_Bestanddeelnr_920-3489.jpg" alt="Exposition d'affiches de A. M. Cassandre">
+                <span class="media-caption">Affiches de A. M. Cassandre</span>
               </a>
             </div>
           </div>
@@ -239,6 +210,40 @@
       </div>
     </article>
 
+    <article class="event" data-theme="annees-folles" data-wiki="https://fr.wikipedia.org/wiki/Ann%C3%A9es_folles">
+      <span class="dot"></span>
+      <div class="card">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-annees-folles">
+          <h2 class="title">Les années folles <span class="title-font-note">(Broadway)</span></h2>
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="card-content" id="content-annees-folles">
+          <p class="year">1920 - 1929</p>
+          <p class="desc">Periode d'effervescence artistique et culturelle, marquee par le jazz, la modernite urbaine et l'elegance graphique.</p>
+          <ul class="details">
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="paul-colin" title="Clique pour ouvrir sa fiche">Paul Colin</span>, <span class="figure-name" data-person="charles-loupot" title="Clique pour ouvrir sa fiche">Charles Loupot</span>.</li>
+            <li><strong>Typographies :</strong><br>usage de lettrages geometriques, affiches stylisees et influences Art déco.</li>
+            <li><strong>Affiches / créations majeures :</strong><br>Revue Negre - Paul Colin (1925), affiches de spectacles parisiens des annees 1920.</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>lignes elegantes, rythmes dynamiques, motifs repetitifs, contraste noir-or-couleurs vives.</li>
+          </ul>
+          <div class="media-pair">
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Josephine_Baker_-_Paul_Colin_(39055570664).jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Josephine_Baker_-_Paul_Colin_%2839055570664%29.jpg" alt="Josephine Baker peinte par Paul Colin">
+                <span class="media-caption">Josephine Baker - Paul Colin</span>
+              </a>
+            </div>
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9phine_Baker_-_photo_Wal%C3%A9ry.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9phine_Baker_-_photo_Wal%C3%A9ry.jpg" alt="Portrait de Josephine Baker, photo Walery">
+                <span class="media-caption">Josephine Baker - photo Walery</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <article class="event" data-theme="constructivisme" data-wiki="https://fr.wikipedia.org/wiki/Constructivisme_(art)">
       <span class="dot"></span>
       <div class="card">
@@ -266,40 +271,6 @@
               <a class="media-link" href="https://en.wikipedia.org/wiki/File:1924_Poster_by_Alexander_Rodchenko,_showing_Lilya_Brik_saying_in_Russian_Books_(Please)_in_all_branches_of_knowledge.jpg" target="_blank" rel="noopener noreferrer">
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/1924_Poster_by_Alexander_Rodchenko%2C_showing_Lilya_Brik_saying_in_Russian_Books_%28Please%29_in_all_branches_of_knowledge.jpg" alt="Affiche Lengiz Books in all branches of knowledge, Alexander Rodchenko, 1924">
                 <span class="media-caption">Lengiz - Books in all branches of knowledge (1924)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="event" data-theme="style-suisse" data-wiki="https://fr.wikipedia.org/wiki/Style_typographique_international">
-      <span class="dot"></span>
-      <div class="card">
-        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-style-suisse">
-          <h2 class="title">Style suisse <span class="title-font-note">(Helvetica)</span></h2>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="card-content" id="content-style-suisse">
-          <p class="year">1957 - aujourd'hui</p>
-          <p class="desc">Le style typographique international, ne en Suisse, systematise la grille, l'asymetrie et la clarte fonctionnelle dans la communication visuelle.</p>
-          <ul class="details">
-            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="josef-muller-brockmann" title="Clique pour ouvrir sa fiche">Josef Muller-Brockmann</span>, <span class="figure-name" data-person="armin-hofmann" title="Clique pour ouvrir sa fiche">Armin Hofmann</span>.</li>
-            <li><strong>Typographies :</strong><br>Helvetica (Max Miedinger, 1957), Univers (Adrian Frutiger, 1957), Akzidenz-Grotesk (fin XIXe, reference majeure du courant).</li>
-            <li><strong>Affiches / créations majeures :</strong><br>series d'affiches de concerts de Zurich, systemes editoriaux et signaletiques modernistes.</li>
-            <li><strong>Caractéristiques graphiques :</strong><br>grille modulaire, sans-serif neutres, hiérarchie stricte, mise en page asymetrique et photographie objective.</li>
-          </ul>
-          <div class="media-pair">
-            <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Josef_M%C3%BCller-Brockmann_1957.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Josef_M%C3%BCller-Brockmann_1957.jpg" alt="Affiche Juni-Festwochen Zurich 1957 de Josef Muller-Brockmann">
-                <span class="media-caption">Juni-Festwochen Zurich (1957)</span>
-              </a>
-            </div>
-            <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Musica_Viva._M%C3%BCller-Brockmann.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Musica_Viva._M%C3%BCller-Brockmann.jpg" alt="Affiche Musica Viva de Josef Muller-Brockmann">
-                <span class="media-caption">Musica Viva (1959)</span>
               </a>
             </div>
           </div>
@@ -341,6 +312,108 @@
       </div>
     </article>
 
+    <article class="event" data-theme="ecole-polonaise" data-wiki="https://fr.wikipedia.org/wiki/%C3%89cole_polonaise_d%27affiche">
+      <span class="dot"></span>
+      <div class="card">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-ecole-polonaise">
+          <h2 class="title">École polonaise <span class="title-font-note">(Antykwa Poltawskiego)</span></h2>
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="card-content" id="content-ecole-polonaise">
+          <p class="year">1948 - 1989</p>
+          <p class="desc">L'ecole polonaise d'affiche developpe un langage visuel puissant, poetique et symbolique, entre art et communication publique.</p>
+          <ul class="details">
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="henryk-tomaszewski" title="Clique pour ouvrir sa fiche">Henryk Tomaszewski</span>, <span class="figure-name" data-person="jan-lenica" title="Clique pour ouvrir sa fiche">Jan Lenica</span>.</li>
+            <li><strong>Typographies :</strong><br>lettrages dessines a la main, caracteres expressifs integres a l'image.</li>
+            <li><strong>Affiches / créations majeures :</strong><br>affiches de cinema, theatre et cirque polonais des annees 1950-1970.</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>metaphores visuelles, aplats forts, dessin gestuel, humour noir et composition libre.</li>
+          </ul>
+          <div class="media-pair">
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Henryk_Tomaszewski%2C_plakat_%22Moore._Wystawa_rze%C5%BAb_Henry_Moore%27a%22.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Henryk_Tomaszewski%2C_plakat_%22Moore._Wystawa_rze%C5%BAb_Henry_Moore%27a%22.jpg" alt="Affiche Moore. Wystawa rzezb Henry Moore'a de Henryk Tomaszewski">
+                <span class="media-caption">Henryk Tomaszewski, « Moore. Wystawa rzezb Henry Moore'a »</span>
+              </a>
+            </div>
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Tadeusz_Trepkowski_TNP.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tadeusz_Trepkowski_TNP.jpg" alt="Affiche TNP de Tadeusz Trepkowski, 1954">
+                <span class="media-caption">Tadeusz Trepkowski, « TNP » (1954)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event" data-theme="gag-visuel" data-wiki="https://fr.wikipedia.org/wiki/Raymond_Savignac">
+      <span class="dot"></span>
+      <div class="card">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-gag-visuel">
+          <h2 class="title">Le gag visuel <span class="title-font-note">(Archivo Black)</span></h2>
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="card-content" id="content-gag-visuel">
+          <p class="year">1950 - 1975</p>
+          <p class="desc">Le gag visuel francais mise sur l'evidence du signe, l'humour et le choc d'une idee lisible en une seconde, surtout dans l'affiche publicitaire.</p>
+          <ul class="details">
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="raymond-savignac" title="Clique pour ouvrir sa fiche">Raymond Savignac</span>, <span class="figure-name" data-person="bernard-villemot" title="Clique pour ouvrir sa fiche">Bernard Villemot</span>.</li>
+            <li><strong>Typographies :</strong><br>sans-serif grasses, capitales nettes, lettrages compacts poses comme prolongement du gag graphique.</li>
+            <li><strong>Affiches / créations majeures :</strong><br>Monsavon au lait - Savignac (1949), Verigoud - Savignac (1957), campagnes Bally et Orangina - Villemot.</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>idee unique, simplification extreme, humour immediat, silhouette lisible, couleur franche et memorisation instantanee.</li>
+          </ul>
+          <div class="media-pair">
+            <div class="media-block">
+              <a class="media-link" href="https://posterissim.com/fr/publicit%C3%A9/45-monsavon-au-lait.html" target="_blank" rel="noopener noreferrer">
+                <img src="https://posterissim.com/603-large_default/monsavon-au-lait.jpg" alt="Affiche Monsavon au lait de Raymond Savignac">
+                <span class="media-caption">Monsavon au lait - Savignac (1949)</span>
+              </a>
+            </div>
+            <div class="media-block">
+              <a class="media-link" href="https://posterissim.com/en/advertising/149-verigoud.html" target="_blank" rel="noopener noreferrer">
+                <img src="https://posterissim.com/696-large_default/verigoud.jpg" alt="Affiche Verigoud de Raymond Savignac">
+                <span class="media-caption">Verigoud - Savignac (1957)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event" data-theme="style-suisse" data-wiki="https://fr.wikipedia.org/wiki/Style_typographique_international">
+      <span class="dot"></span>
+      <div class="card">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-style-suisse">
+          <h2 class="title">Style suisse <span class="title-font-note">(Helvetica)</span></h2>
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="card-content" id="content-style-suisse">
+          <p class="year">1957 - aujourd'hui</p>
+          <p class="desc">Le style typographique international, ne en Suisse, systematise la grille, l'asymetrie et la clarte fonctionnelle dans la communication visuelle.</p>
+          <ul class="details">
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="josef-muller-brockmann" title="Clique pour ouvrir sa fiche">Josef Muller-Brockmann</span>, <span class="figure-name" data-person="armin-hofmann" title="Clique pour ouvrir sa fiche">Armin Hofmann</span>.</li>
+            <li><strong>Typographies :</strong><br>Helvetica (Max Miedinger, 1957), Univers (Adrian Frutiger, 1957), Akzidenz-Grotesk (fin XIXe, reference majeure du courant).</li>
+            <li><strong>Affiches / créations majeures :</strong><br>series d'affiches de concerts de Zurich, systemes editoriaux et signaletiques modernistes.</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>grille modulaire, sans-serif neutres, hiérarchie stricte, mise en page asymetrique et photographie objective.</li>
+          </ul>
+          <div class="media-pair">
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Josef_M%C3%BCller-Brockmann_1957.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Josef_M%C3%BCller-Brockmann_1957.jpg" alt="Affiche Juni-Festwochen Zurich 1957 de Josef Muller-Brockmann">
+                <span class="media-caption">Juni-Festwochen Zurich (1957)</span>
+              </a>
+            </div>
+            <div class="media-block">
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Musica_Viva._M%C3%BCller-Brockmann.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Musica_Viva._M%C3%BCller-Brockmann.jpg" alt="Affiche Musica Viva de Josef Muller-Brockmann">
+                <span class="media-caption">Musica Viva (1959)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <article class="event" data-theme="psychedelique" data-wiki="https://fr.wikipedia.org/wiki/Art_psych%C3%A9d%C3%A9lique">
       <span class="dot"></span>
       <div class="card">
@@ -375,33 +448,67 @@
       </div>
     </article>
 
-    <article class="event" data-theme="ecole-polonaise" data-wiki="https://fr.wikipedia.org/wiki/%C3%89cole_polonaise_d%27affiche">
+    <article class="event" data-theme="mai-68" data-wiki="https://fr.wikipedia.org/wiki/Mai_68">
       <span class="dot"></span>
       <div class="card">
-        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-ecole-polonaise">
-          <h2 class="title">École polonaise <span class="title-font-note">(Antykwa Poltawskiego)</span></h2>
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-mai-68">
+          <h2 class="title">Mai 68 <span class="title-font-note">(Oswald)</span></h2>
           <span class="toggle-icon">+</span>
         </button>
-        <div class="card-content" id="content-ecole-polonaise">
-          <p class="year">1948 - 1989</p>
-          <p class="desc">L'ecole polonaise d'affiche developpe un langage visuel puissant, poetique et symbolique, entre art et communication publique.</p>
+        <div class="card-content" id="content-mai-68">
+          <p class="year">1968 - 1972</p>
+          <p class="desc">Mai 68 fait entrer dans l'espace public un graphisme de lutte direct, collectif et immediat, ou slogan, image et typographie deviennent des outils d'action.</p>
           <ul class="details">
-            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="henryk-tomaszewski" title="Clique pour ouvrir sa fiche">Henryk Tomaszewski</span>, <span class="figure-name" data-person="jan-lenica" title="Clique pour ouvrir sa fiche">Jan Lenica</span>.</li>
-            <li><strong>Typographies :</strong><br>lettrages dessines a la main, caracteres expressifs integres a l'image.</li>
-            <li><strong>Affiches / créations majeures :</strong><br>affiches de cinema, theatre et cirque polonais des annees 1950-1970.</li>
-            <li><strong>Caractéristiques graphiques :</strong><br>metaphores visuelles, aplats forts, dessin gestuel, humour noir et composition libre.</li>
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="atelier-populaire" title="Clique pour ouvrir sa fiche">Atelier Populaire</span>, <span class="figure-name" data-person="roman-cieslewicz" title="Clique pour ouvrir sa fiche">Roman Cieslewicz</span>.</li>
+            <li><strong>Typographies :</strong><br>capitales militantes peintes ou composees au pochoir, grotesques condensees, lettrages d'atelier et slogans en aplats.</li>
+            <li><strong>Affiches / créations majeures :</strong><br>Nous sommes le pouvoir (1968), affiches anonymes de l'Atelier Populaire et iconographie de contestation serigraphiee.</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>message frontal, bichromie rouge/noir, image-slogan, economie de moyens, impression rapide et diffusion de rue.</li>
           </ul>
           <div class="media-pair">
             <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Henryk_Tomaszewski%2C_plakat_%22Moore._Wystawa_rze%C5%BAb_Henry_Moore%27a%22.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Henryk_Tomaszewski%2C_plakat_%22Moore._Wystawa_rze%C5%BAb_Henry_Moore%27a%22.jpg" alt="Affiche Moore. Wystawa rzezb Henry Moore'a de Henryk Tomaszewski">
-                <span class="media-caption">Henryk Tomaszewski, « Moore. Wystawa rzezb Henry Moore'a »</span>
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Mai_68._Nous_sommes_le_pouvoir_affiche%2C_non_identifi%C3%A9.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mai%2068.%20Nous%20sommes%20le%20pouvoir%20affiche%2C%20non%20identifi%C3%A9.jpg" alt="Affiche de Mai 68 Nous sommes le pouvoir">
+                <span class="media-caption">Nous sommes le pouvoir (1968)</span>
               </a>
             </div>
             <div class="media-block">
-              <a class="media-link" href="https://commons.wikimedia.org/wiki/Special:FilePath/Tadeusz_Trepkowski_TNP.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tadeusz_Trepkowski_TNP.jpg" alt="Affiche TNP de Tadeusz Trepkowski, 1954">
-                <span class="media-caption">Tadeusz Trepkowski, « TNP » (1954)</span>
+              <a class="media-link" href="https://commons.wikimedia.org/wiki/File:Mai_68._Votez_UDR_maquette_d%27affiche%2C_non_identifi%C3%A9.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mai%2068.%20Votez%20UDR%20maquette%20d%27affiche%2C%20non%20identifi%C3%A9.jpg" alt="Affiche Votez UDR de Mai 68">
+                <span class="media-caption">Votez UDR (1968)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event" data-theme="postmodernisme" data-wiki="https://fr.wikipedia.org/wiki/Postmodernisme">
+      <span class="dot"></span>
+      <div class="card">
+        <button class="card-toggle" type="button" aria-expanded="false" aria-controls="content-postmodernisme">
+          <h2 class="title">Postmodernisme <span class="title-font-note">(Monoton)</span></h2>
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="card-content" id="content-postmodernisme">
+          <p class="year">1975 - 1995</p>
+          <p class="desc">Le postmodernisme rompt avec la rigueur moderniste en privilegiant l'hybridation, l'ironie, le collage visuel et les compositions expressives.</p>
+          <ul class="details">
+            <li><strong>Figures importantes :</strong><br><span class="figure-name" data-person="april-greiman" title="Clique pour ouvrir sa fiche">April Greiman</span>, <span class="figure-name" data-person="david-carson" title="Clique pour ouvrir sa fiche">David Carson</span>.</li>
+            <li><strong>Typographies :</strong><br>superpositions de fontes, lettrages experimentaux, detournement des codes modernistes et compositions anti-grille.</li>
+            <li><strong>Affiches / créations majeures :</strong><br>Does It Make Sense? - April Greiman (1986), couvertures Ray Gun - David Carson (1995).</li>
+            <li><strong>Caractéristiques graphiques :</strong><br>collision des styles, couleurs franches, fragmentation, textures numeriques, diagonales, citations historiques et mise en page volontairement instable.</li>
+          </ul>
+          <div class="media-pair">
+            <div class="media-block">
+              <a class="media-link" href="https://www.aprilgreiman.com/does-it-make-sense" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.prod.website-files.com/65eb84ca7db7cc5a9a9de38d/65f4f9cd0a019f1d78724176_DQ-133%20for%20Web.jpg" alt="Affiche Does It Make Sense d'April Greiman">
+                <span class="media-caption">Does It Make Sense? - April Greiman (1986)</span>
+              </a>
+            </div>
+            <div class="media-block">
+              <a class="media-link" href="https://www.davidcarsondesign.com/work/magazine/raygun/" target="_blank" rel="noopener noreferrer">
+                <img src="https://www.davidcarsondesign.com/img_temp_la/24c.jpg" alt="Couverture Ray Gun numero 22 dirigee par David Carson">
+                <span class="media-caption">Ray Gun no 22 - David Carson (1995)</span>
               </a>
             </div>
           </div>

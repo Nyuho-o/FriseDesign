@@ -1,6 +1,7 @@
     const events = [...document.querySelectorAll(".event")];
     const timeline = document.querySelector(".timeline");
     const mainTitle = document.querySelector(".hero h1");
+    const timelineDate = document.getElementById("timeline-date");
 
     const toMs = (timeValue) => {
       if (!timeValue) return 0;
@@ -19,6 +20,34 @@
       });
       timeline.classList.add("cascade");
     };
+
+    const extractBoundaryYears = (label) => {
+      const matches = (label || "").match(/\d{4}/g) || [];
+      if (!matches.length) return { start: 0, end: 0 };
+      return {
+        start: Number(matches[0]),
+        end: Number(matches[matches.length - 1])
+      };
+    };
+
+    const firstRange = extractBoundaryYears(events[0]?.querySelector(".year")?.textContent);
+    const lastRange = extractBoundaryYears(events[events.length - 1]?.querySelector(".year")?.textContent);
+    const timelineYearStart = firstRange.start || 0;
+    const timelineYearEnd = lastRange.end || timelineYearStart;
+
+    const updateTimelineDate = () => {
+      if (!timelineDate) return;
+      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const scrollProgress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+      const currentYear = Math.round(
+        timelineYearStart + (timelineYearEnd - timelineYearStart) * scrollProgress
+      );
+      timelineDate.textContent = String(currentYear || timelineYearStart);
+    };
+
+    updateTimelineDate();
+    window.addEventListener("scroll", updateTimelineDate, { passive: true });
+    window.addEventListener("resize", updateTimelineDate);
 
     if (mainTitle) {
       mainTitle.addEventListener("animationend", startCascade, { once: true });
@@ -41,7 +70,10 @@
       "theme-style-suisse",
       "theme-constructivisme-suisse",
       "theme-psychedelique",
-      "theme-ecole-polonaise"
+      "theme-mai-68",
+      "theme-gag-visuel",
+      "theme-ecole-polonaise",
+      "theme-postmodernisme"
     ];
 
     const syncThemeWithOpenSection = () => {
@@ -67,6 +99,18 @@
       }
     };
 
+    const keepCardHeaderInPlace = (card) => {
+      if (!card) return;
+      const topBefore = card.getBoundingClientRect().top;
+      window.requestAnimationFrame(() => {
+        const topAfter = card.getBoundingClientRect().top;
+        const delta = topAfter - topBefore;
+        if (Math.abs(delta) > 1) {
+          window.scrollBy({ top: delta, left: 0, behavior: "auto" });
+        }
+      });
+    };
+
     const toggleSection = (toggle) => {
       const card = toggle.closest(".card");
       const isAlreadyOpen = card.classList.contains("open");
@@ -82,6 +126,7 @@
       if (!isAlreadyOpen) {
         card.classList.add("open");
         toggle.setAttribute("aria-expanded", "true");
+        keepCardHeaderInPlace(card);
       } else {
         toggle.setAttribute("aria-expanded", "false");
       }
@@ -138,8 +183,14 @@
       "richard-paul-lohse": { name: "Richard Paul Lohse", years: "1902-1988", movement: "Constructivisme suisse", bio: "Artiste et graphiste suisse de l'art concret, connu pour ses structures modulaires et ses compositions serielles.", keyWork: "Compositions systematiques et travaux graphiques modulaires (annees 1940-1970).", link: "https://en.wikipedia.org/wiki/Richard_Paul_Lohse" },
       "wes-wilson": { name: "Wes Wilson", years: "1937-2020", movement: "Psychédélisme americain", bio: "Affichiste americain pionnier du lettrage psychadelique, celebre pour ses affiches de concerts a San Francisco.", keyWork: "Affiches du Fillmore Auditorium (annees 1960).", link: "https://en.wikipedia.org/wiki/Wes_Wilson" },
       "victor-moscoso": { name: "Victor Moscoso", years: "1936-", movement: "Psychédélisme americain", bio: "Graphiste et artiste associe aux affiches psychadeliques, reconnu pour ses contrastes chromatiques vibrants et compositions optiques.", keyWork: "Affiches pour l'Avalon Ballroom (1966-1968).", link: "https://en.wikipedia.org/wiki/Victor_Moscoso" },
+      "atelier-populaire": { name: "Atelier Populaire", years: "1968-", movement: "Mai 68", bio: "Collectif ne a l'Ecole des Beaux-Arts de Paris pendant Mai 68, auteur d'affiches militantes produites en urgence pour la rue et les occupations.", keyWork: "Series d'affiches serigraphiees et imprimees dans le contexte de Mai 68.", link: "https://fr.wikipedia.org/wiki/Atelier_populaire" },
+      "roman-cieslewicz": { name: "Roman Cieslewicz", years: "1930-1996", movement: "Mai 68 / graphisme politique", bio: "Graphiste, photomonteur et affichiste actif a Paris, connu pour ses images de choc, ses collages politiques et sa puissance de synthese visuelle.", keyWork: "Affiches culturelles et politiques realisees en France a partir des annees 1960.", link: "https://fr.wikipedia.org/wiki/Roman_Cie%C5%9Blewicz" },
+      "raymond-savignac": { name: "Raymond Savignac", years: "1907-2002", movement: "Gag visuel francais", bio: "Affichiste francais celebre pour ses slogans graphiques immediats, son humour bonhomme et la simplification radicale de l'image publicitaire.", keyWork: "Monsavon au lait (1949).", link: "https://fr.wikipedia.org/wiki/Raymond_Savignac" },
+      "bernard-villemot": { name: "Bernard Villemot", years: "1911-1989", movement: "Gag visuel francais", bio: "Affichiste francais connu pour ses affiches Bally, Orangina, Perrier et Air France, construites sur l'elegance du trait et l'impact instantane du signe.", keyWork: "Campagnes Bally et Orangina (annees 1950-1980).", link: "https://fr.wikipedia.org/wiki/Bernard_Villemot" },
       "henryk-tomaszewski": { name: "Henryk Tomaszewski", years: "1914-2005", movement: "Ecole polonaise d'affiche", bio: "Graphiste polonais majeur, precurseur de l'affiche culturelle expressive d'apres-guerre.", keyWork: "Affiches de theatre et de cinema polonaises (annees 1950-1970).", link: "https://fr.wikipedia.org/wiki/Henryk_Tomaszewski_(graphiste)" },
-      "jan-lenica": { name: "Jan Lenica", years: "1928-2001", movement: "Ecole polonaise d'affiche", bio: "Affichiste et illustrateur polonais, reconnu pour son style metaphorique et surrealisant.", keyWork: "Affiches de cinema et de theatre, travail graphique international.", link: "https://fr.wikipedia.org/wiki/Jan_Lenica" }
+      "jan-lenica": { name: "Jan Lenica", years: "1928-2001", movement: "Ecole polonaise d'affiche", bio: "Affichiste et illustrateur polonais, reconnu pour son style metaphorique et surrealisant.", keyWork: "Affiches de cinema et de theatre, travail graphique international.", link: "https://fr.wikipedia.org/wiki/Jan_Lenica" },
+      "april-greiman": { name: "April Greiman", years: "1948-", movement: "Postmodernisme", bio: "Designer americaine associee au postmodernisme californien, connue pour ses compositions numeriques, ses couleurs vives et ses mises en page experimentales.", keyWork: "Does It Make Sense? (1986).", link: "https://en.wikipedia.org/wiki/April_Greiman" },
+      "david-carson": { name: "David Carson", years: "1955-", movement: "Postmodernisme", bio: "Directeur artistique et typographe americain, celebre pour son approche deconstructive et intuitive du graphisme editorial.", keyWork: "Direction artistique du magazine Ray Gun (annees 1990).", link: "https://en.wikipedia.org/wiki/David_Carson_(graphic_designer)" }
     };
 
     const personModal = document.getElementById("person-modal");
