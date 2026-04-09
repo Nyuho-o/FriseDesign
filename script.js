@@ -46,15 +46,7 @@
       timelineDate.textContent = String(currentYear || timelineYearStart);
 
       if (timeline && timelineIndicator) {
-        const timelineRect = timeline.getBoundingClientRect();
-        const isTimelineVisible = timelineRect.bottom > 0 && timelineRect.top < window.innerHeight;
-        const clampedProgress = Math.min(Math.max(scrollProgress, 0), 1);
-        const isMobile = window.innerWidth <= 860;
-        const indicatorLeft = isMobile ? timelineRect.left + 16 : timelineRect.left + (timelineRect.width / 2);
-        const indicatorTop = timelineRect.top + (timelineRect.height * clampedProgress);
-        timelineIndicator.style.left = `${indicatorLeft}px`;
-        timelineIndicator.style.top = `${indicatorTop}px`;
-        timelineIndicator.classList.toggle("is-visible", isTimelineVisible);
+        timeline.style.setProperty("--timeline-progress", String(scrollProgress));
       }
     };
 
